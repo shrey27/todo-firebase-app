@@ -1,16 +1,27 @@
-button {
-  background-color: inherit;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+body{
+  background-color: #8999cf;
+}
+.signIn {
+  background-color:#e4c40f;
+  padding:10px;
+  border-radius: 10px;
+  font-family: 'Zen Dots', cursive;
+  font-size: x-large;
+  display:flex;
+  position:absolute;
+  right: 10px;
+  top: 10px;
 }
 
-button:hover,
-button:focus {
-  transform: scale(1.2);
-  transition: ease-in-out 0.1s;
+h2{
+  font-family: 'Permanent Marker', cursive;
+  margin:50px;
+  color:#d49f0b;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  text-align: center;
 }
-
 p:hover,
 p:focus {
   cursor: pointer;
@@ -25,8 +36,9 @@ form {
 }
 
 input {
-  border: none;
   border-bottom: 1px solid black;
+  border-radius:10px;
+  border-style:inset;
 }
 
 main {
@@ -37,9 +49,10 @@ main {
 }
 
 header {
+  text-align: center;
   display: flex;
   justify-content: flex-end;
-  padding: 0 50px;
+  padding: 0 10px;
 }
 
 .todo {
@@ -58,4 +71,10 @@ header {
 .todo :last-child {
   margin-left: 2rem;
   color: #bf616a;
+}
+
+ul{
+  text-align: left;
+  padding:50px;
+
 }
