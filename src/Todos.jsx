@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import firebase, { auth, firestore } from "./firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import Todo from "./Todo";
 
 //const addTodo = functions.httpsCallable("addTodo");
 //functions are not added in the Firebase backend so calling them will throw CORS error
@@ -25,41 +26,26 @@ const Todos = () => {
     });
   };
 
-  return (
-    <>
-      <header>
-        <button onClick={signOut}>Sign Out</button>
-      </header>
-      <main>
+  return (<>
+        <main>
+        <div class="header">
+            <h2> To Do List ...✏️ </h2>
+            <button class="signIn" onClick={signOut}>Sign Out</button>
+        </div>
         <form onSubmit={onSubmitTodo}>
           <input
             required
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
-            placeholder="What's Next?"
+            placeholder="Enter a task"
           />
-          <button type="submit">Add</button>
+          <button  type="submit">Add</button>
         </form>
+        <div>
         {todos && todos.map((todo) => <Todo key={todo.id} {...todo} />)}
+        </div>
       </main>
     </>
-  );
-};
-
-const Todo = ({ id, complete, text }) => {
-  const todosRef = firestore.collection(`users/${auth.currentUser.uid}/todos`);
-  const onCompleteTodo = (id, complete) =>
-    todosRef.doc(id).set({ complete: !complete }, { merge: true });
-
-  const onDeleteTodo = (id) => todosRef.doc(id).delete();
-
-  return (
-    <div key={id} className="todo">
-      <button  className={`todo-item ${complete ? "complete" : ""}`}
-        tabIndex="0"
-        onClick={() => onCompleteTodo(id, complete)}>  {text}  </button>
-      <button onClick={() => onDeleteTodo(id)}>x</button>
-    </div>
   );
 };
 

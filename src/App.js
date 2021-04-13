@@ -9,7 +9,8 @@ const sighInWithGoogle = () =>
 
 const SignIn = () => (
   <main>
-    <button onClick={sighInWithGoogle}>Sign In With Google</button>
+    <h2> To Do List ...✏️ </h2>
+    <button class="signIn" onClick={sighInWithGoogle}>Sign In</button>
   </main>
 );
 
