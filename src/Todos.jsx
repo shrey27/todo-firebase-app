@@ -21,7 +21,6 @@ const Todos = () => {
     setTodo("");
     todosRef.add({
       text: todo,
-      status: "InProgress",
       complete: false,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
@@ -29,7 +28,7 @@ const Todos = () => {
 
   return (<>
         <main>
-        <div class="header">
+        <div class="header"> 
             <h2> To Do List ...✏️ </h2>
             <button class="signIn" onClick={signOut}>Sign Out</button>
         </div>
