@@ -21,6 +21,7 @@ const Todos = () => {
     setTodo("");
     todosRef.add({
       text: todo,
+      status: "InProgress",
       complete: false,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
@@ -33,13 +34,8 @@ const Todos = () => {
             <button class="signIn" onClick={signOut}>Sign Out</button>
         </div>
         <form onSubmit={onSubmitTodo}>
-          <input
-            required
-            value={todo}
-            onChange={(e) => setTodo(e.target.value)}
-            placeholder="Enter a task"
-          />
-          <button  type="submit">Add</button>
+          <input required value={todo} onChange={(e) => setTodo(e.target.value)}placeholder="Enter a task"/>
+          <button class="addButton" type="submit">Add</button>
         </form>
         <div>
         {todos && todos.map((todo) => <Todo key={todo.id} {...todo} />)}

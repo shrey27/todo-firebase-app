@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 body{
-  background-color: #8999cf;
+  background-color: #095c6b;
 }
 .signIn {
   background-color:#e4c40f;
@@ -14,6 +14,14 @@ body{
   right: 10px;
   top: 10px;
 }
+.addButton{
+  background-color:#e4c40f;
+  padding:10px;
+  border-radius: 10px;
+  font-family: 'Zen Dots', cursive;
+  font-size: x-large;
+  display:flex;
+}
 
 h2{
   font-family: 'Permanent Marker', cursive;
@@ -22,12 +30,12 @@ h2{
   text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
   text-align: center;
 }
-p:hover,
+/* p:hover,
 p:focus {
   cursor: pointer;
   transform: scale(1.2);
   transition: ease-in-out 0.1s;
-}
+} */
 
 form {
   display: flex;
@@ -36,9 +44,10 @@ form {
 }
 
 input {
-  border-bottom: 1px solid black;
-  border-radius:10px;
-  border-style:inset;
+  border-bottom: 1px solid rgb(250, 250, 250);
+  
+  border-style:none;
+  text-decoration: antiquewhite;
 }
 
 main {
@@ -48,33 +57,27 @@ main {
   padding: 0 50px;
 }
 
-header {
-  text-align: center;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 10px;
-}
-
 .todo {
   display: flex;
   justify-content: center;
 }
 
 .todo-item {
-  text-decoration: none;
+  min-width: 80%;
+  text-align: left;
+  text-decoration: antiquewhite;
+  color:rgb(213, 159, 11);
+  font-size: x-large;
 }
-
+.marker{
+  font-size: x-large;
+  align-items: flex-end;
+}
 .complete {
-  text-decoration: line-through;
+  text-decoration:line-through;
+  color:black;
 }
 
 .todo :last-child {
-  margin-left: 2rem;
   color: #bf616a;
-}
-
-ul{
-  text-align: left;
-  padding:50px;
-
 }
